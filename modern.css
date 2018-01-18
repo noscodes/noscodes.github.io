@@ -1,0 +1,225 @@
+body
+{
+  margin: 0;
+  padding: 0;
+  color: #cdcdcd;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+a:hover
+{
+  color: tomato;
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; 
+  z-index: 2; 
+  
+  -webkit-touch-callout: none;
+}
+
+
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+ 
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+@font-face {
+  font-family: 'RistrettoPro';
+  src: url('RistrettoPro-Regular/ristrettopro-regular-webfont.eot');
+  src: url('RistrettoPro-Regular/ristrettopro-regular-webfont.woff2') format('woff2'),
+       url('RistrettoPro-Regular/ristrettopro-regular-webfont.woff') format('woff'),
+       url('RistrettoPro-Regular/ristrettopro-regular-webfont.ttf') format('truetype'),
+       url('RistrettoPro-Regular/ristrettopro-regular-webfont.svg#ristrettopro-regular-webfont') format('svg'),
+       url('RistrettoPro-Regular/ristrettopro-regular-webfont.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'RistrettoSlabPro';
+  src: url('wpid-Ristretto_Slab_Pro_Regular/RistrettoSlabPro-Regular.eot');
+  src: url('wpid-Ristretto_Slab_Pro_Regular/RistrettoSlabPro-Regular.woff2') format('woff2'),
+       url('wpid-Ristretto_Slab_Pro_Regular/RistrettoSlabPro-Regular.woff') format('woff'),
+       url('wpid-Ristretto_Slab_Pro_Regular/RistrettoSlabPro-Regular.ttf') format('truetype'),
+       url('wpid-Ristretto_Slab_Pro_Regular/RistrettoSlabPro-Regular.svg#RistrettoSlabPro-Regular') format('svg'),
+       url('wpid-Ristretto_Slab_Pro_Regular/RistrettoSlabPro-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+  text-align: center;
+  text-decoration: none;
+}
+
+h1:hover {
+  text-decoration: underline;
+  text-decoration-color: green;
+}
+
+.one {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  bottom:60%;
+  left: 60%;
+}
+
+
+canvas {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lobster+Two:400,400italic);
+
+html, body {
+  min-height: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.background-image {
+  width: 110%;
+  height: 110%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background: url('https://images.unsplash.com/photo-1452723312111-3a7d0db0e024?crop=entropy&dpr=2&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1450.jpg') no-repeat left center / cover;
+}
+
+/* Not needed styles */
+
+h2 {
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  font-family: 'Lobster Two', cursive;
+  font-style: italic;
+  z-index: 9;
+  font-size: 100px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+}
